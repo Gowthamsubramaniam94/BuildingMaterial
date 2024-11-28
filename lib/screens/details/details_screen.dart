@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop_app/screens/cart/cart_screen.dart';
 
 import '../../models/Product.dart';
-import 'components/color_dots.dart';
 import 'components/product_description.dart';
 import 'components/product_images.dart';
 import 'components/top_rounded_container.dart';
@@ -77,23 +76,13 @@ class DetailsScreen extends StatelessWidget {
       body: ListView(
         children: [
           ProductImages(product: product),
-          TopRoundedContainer(
+          SizedBox(height: 20,),
+          Container(
+            padding: EdgeInsets.all(10.0),
             color: Colors.white,
-            child: Column(
-              children: [
-                ProductDescription(
-                  product: product,
-                  pressOnSeeMore: () {},
-                ),
-                TopRoundedContainer(
-                  color: const Color(0xFFF6F7F9),
-                  child: Column(
-                    children: [
-                      ColorDots(product: product),
-                    ],
-                  ),
-                ),
-              ],
+            child: ProductDescription(
+              product: product,
+              pressOnSeeMore: () {},
             ),
           ),
         ],
